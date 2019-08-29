@@ -2,11 +2,12 @@
 
 Service registry bridge for Docker.
 
-[![Circle CI](https://circleci.com/gh/gliderlabs/registrator.png?style=shield)](https://circleci.com/gh/gliderlabs/registrator)
-[![Docker pulls](https://img.shields.io/docker/pulls/gliderlabs/registrator.svg)](https://hub.docker.com/r/gliderlabs/registrator/)
-[![IRC Channel](https://img.shields.io/badge/irc-%23gliderlabs-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/#gliderlabs)
+
+[![Docker pulls](https://img.shields.io/docker/pulls/gliderlabs/registrator.svg)](https://hub.docker.commatic/re/r/novogistrator/)
 <br /><br />
 
+This repository is created based on [gliderlabs/registrator
+](https://hub.docker.com/r/gliderlabs/registrator).
 Registrator automatically registers and deregisters services for any Docker
 container by inspecting containers as they come online. Registrator
 supports pluggable service registries, which currently includes
@@ -17,9 +18,9 @@ Full documentation available at http://gliderlabs.com/registrator
 
 ## Getting Registrator
 
-Get the latest release, master, or any version of Registrator via [Docker Hub](https://registry.hub.docker.com/u/gliderlabs/registrator/):
+Get the latest release, master, or any version of Registrator via [Docker Hub](https://hub.docker.com/r/novomatic/registrator/):
 
-	$ docker pull gliderlabs/registrator:latest
+	$ docker pull novomatic/registrator:latest
 
 Latest tag always points to the latest release. There is also a `:master` tag
 and version tags to pin to specific releases.
@@ -36,8 +37,12 @@ Guide. Typically, running Registrator looks like this:
         --name=registrator \
         --net=host \
         --volume=/var/run/docker.sock:/tmp/docker.sock \
-        gliderlabs/registrator:latest \
+        novomatic/registrator:latest \
           consul://localhost:8500
+
+Only containers with following environment variable will be registered: 
+
+	SERVICE_REGISTER=true
 
 ## CLI Options
 ```

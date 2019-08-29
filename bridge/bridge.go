@@ -268,8 +268,8 @@ func (b *Bridge) newService(port ServicePort, isgroup bool) *Service {
 
 	metadata, metadataFromPort := serviceMetaData(container.Config, port.ExposedPort)
 
-	ignore := mapDefault(metadata, "ignore", "")
-	if ignore != "" {
+	register := mapDefault(metadata, "register", "")
+	if register == "" {
 		return nil
 	}
 
